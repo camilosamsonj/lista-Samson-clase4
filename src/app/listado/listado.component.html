@@ -1,0 +1,23 @@
+<h2 class="text-center m-4">Listado de Alumnos</h2>
+<hr>
+
+<table class="table border m-4">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Calificación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr 
+        *ngFor="let alumno of alumnos; let i = index" 
+        [ngClass]="alumno.score >=6 ? 'alumnoAprobado' : 'alumnoReprobado'">
+            <td> {{i + 1}}</td>
+            <td>{{alumno.firstName}}</td>
+            <td>{{alumno.lastName | uppercase }}</td>
+            <td>{{alumno.score}}</td>
+        </tr>
+    </tbody>
+</table>
